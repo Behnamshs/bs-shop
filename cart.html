@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <style>
+        /* استایل‌های ساده برای سبد خرید */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+        }
+        .cart-container {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .cart-items {
+            list-style-type: none;
+            padding: 0;
+        }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            position: relative;
+        }
+        .cart-item img {
+            width: 100px;
+            height: auto;
+            margin-right: 15px;
+            border-radius: 5px;
+            position: relative;
+        }
+        .cart-item h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+        .cart-item .price {
+            font-size: 16px;
+            color: #888;
+        }
+        .cart-item button {
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            position: absolute;
+            right: 2%;
+        }
+        .cart-item button:hover {
+            background-color: #b32d2d;
+        }
+        .total {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: right;
+            margin-top: 20px;
+        }
+        .checkout {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 18px;
+        }
+        .checkout:hover {
+            background-color: #1d9a1d;
+        }
+    </style>
+</head>
+<body>
+    <div class="cart-container">
+        <h1>Your Cart</h1>
+        <ul class="cart-items"></ul>
+        <p class="total">Total: <span class="total-price">0</span> T</p>
+        <button class="checkout">Checkout</button>
+    </div>
+
+    <script>
+        // بارگذاری اطلاعات سبد خرید از localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // تابع برای نمایش آیتم‌های سبد خرید
+        function updateCartUI() {
+            const cartItemsList = document.querySelector('.cart-items');
+            cartItemsList.innerHTML = ''; // پاک کردن محتوای قبلی
+
+            let totalPrice = 0;
+
+            cart.forEach((item, index) => {
+                const listItem = document.createElement('li');
+                listItem.classList.add('cart-item');
+
+                const itemHTML = `
+                    <img src="${item.img}" alt="${item.name}">
+                    <div>
+                        <h2>${item.name}</h2>
+                        <p class="price">${item.price} T</p>
+                    </div>
+                    <button onclick="removeFromCart(${index})">Remove</button>
+                `;
+                listItem.innerHTML = itemHTML;
+                cartItemsList.appendChild(listItem);
+
+                totalPrice += parseFloat(item.price);
+            });
+
+            document.querySelector('.total-price').textContent = totalPrice.toFixed(2);
+        }
+
+        // حذف آیتم از سبد خرید
+        function removeFromCart(index) {
+            cart.splice(index, 1); // حذف آیتم از آرایه
+            localStorage.setItem('cart', JSON.stringify(cart)); // ذخیره دوباره در localStorage
+            updateCartUI(); // بروزرسانی UI
+        }
+
+        // نمایش اطلاعات سبد خرید هنگام بارگذاری صفحه
+        updateCartUI();
+    </script>
+</body>
+</html>
