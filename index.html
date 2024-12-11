@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bs-shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="overlay" class="hidden-overlay"></div>
+    <div id="custom-alert" class="hidden">
+        <div id="alert-message"></div>
+        <button id="close-alert">OK</button>
+    </div>
+    <header>
+        <button>Login</button>
+        <input type="search" placeholder="Search">
+        <h1>BS SHOP</h1>
+    </header>
+    <div class="list">
+        <div class="left">
+            <button class="Color"><a href="cart.html">View cart</a></button>
+        </div>
+        <div class="right">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sales.html">Sales</a></li>
+            <li id="rem"><a href="#">Brands</a></li>
+            <li><a href="#" id="category-btn">Category</a></li>
+        </div>
+    </div>
+
+    <!-- Navbar (پنهان به صورت پیش‌فرض) -->
+<div id="category-navbar" class="hidden">
+    <h3>Filter by Category</h3>
+    <label><input type="checkbox" class="category-checkbox" value="pants"> Pants</label><br>
+    <label><input type="checkbox" class="category-checkbox" value="hoodie"> Hoodie</label><br>
+    <label><input type="checkbox" class="category-checkbox" value="tshirt"> T-Shirt</label><br>
+  
+    <h3>Filter by Price</h3>
+    <input class="range" type="range" id="price-range" min="0" max="1000" step="5" >
+    <span id="price-value">500</span>
+  </div>
+
+    <div class="slideshow">
+        <a href="index.html"><img src="category/10.jpg" class="active" alt="Image 1"></a>
+        <a href="index.html"><img src="category/22.jpg" alt="Image 2"></a>
+      </div>
+
+    <a href=""><img src="category/1.jpg" class="bil2" width="42.5%"></a>
+    <a href=""><img src="category/2.jpg" class="bil2" width="42.5%"></a>
+
+    <h1 class="NEW">NEW'S OF BS</h1>
+    <div class="grid-container" id="Product-list">
+        <div class="category4" data-category="hoodie" data-price="650">
+            <div class="catego">
+                <img src="img/17.jpg" alt="Product Image">
+            </div>
+            <div class="price">
+                <h2>Color Hoodie</h2>
+                <h3>650,000t</h3>
+                <button class="add-to-cart" data-name="color hoodie" data-price="650" data-img="img/17.jpg">
+                    <img src="svg/plus-large-svgrepo-com.svg" width="100%" class="svg1">
+                </button>
+            </div>
+        </div>
+        <div class="category4" data-category="hoodie" data-price="650">
+            <div class="catego">
+                <img src="img/15.jpg" alt="Product Image">
+            </div>
+            <div class="price">
+                <h2>Color Hoodie</h2>
+                <h3>650,000t</h3>
+                <button class="add-to-cart" data-name="color hoodie" data-price="650" data-img="img/15.jpg">
+                    <img src="svg/plus-large-svgrepo-com.svg" width="100%" class="svg1">
+                </button>
+            </div>
+        </div>
+        <div class="category4" data-category="hoodie" data-price="700">
+            <div class="catego">
+                <img src="img/9.jpg" alt="Product Image">
+            </div>
+            <div class="price">
+                <h2>Pink Hoodie</h2>
+                <h3>700,000t</h3>
+                <button class="add-to-cart" data-name="pink hoodie" data-price="700" data-img="img/9.jpg">
+                    <img src="svg/plus-large-svgrepo-com.svg" width="100%" class="svg1">
+                </button>
+            </div>
+        </div>
+        <div class="category4" data-category="hoodie" data-price="700">
+            <div class="catego">
+                <img src="img/16.jpg" alt="Product Image">
+            </div>
+            <div class="price">
+                <h2>Green Hoodie</h2>
+                <h3>700,000t</h3>
+                <button class="add-to-cart" data-name="green hoodie" data-price="700" data-img="img/16.jpg">
+                    <img src="svg/plus-large-svgrepo-com.svg" width="100%" class="svg1">
+                </button>
+            </div>
+        </div>
+        <div class="category4" data-category="hoodie" data-price="700">
+            <div class="catego">
+                <img src="img/18.jpg" alt="Product Image">
+            </div>
+            <div class="price">
+                <h2>Blue Hoodie</h2>
+                <h3>700,000t</h3>
+                <button class="add-to-cart" data-name="blue hoodie" data-price="700" data-img="img/18.jpg">
+                    <img src="svg/plus-large-svgrepo-com.svg" width="100%" class="svg1">
+                </button>
+            </div>
+        </div>
+        <div class="category4" data-category="hoodie" data-price="700">
+            <div class="catego">
+                <img src="img/12.avif" alt="Product Image">
+            </div>
+            <div class="price">
+                <h2>Blue Hoodie2</h2>
+                <h3>700,000t</h3>
+                <button class="add-to-cart" data-name="blue hoodie2" data-price="700" data-img="img/12.avif">
+                    <img src="svg/plus-large-svgrepo-com.svg" width="100%" class="svg1">
+                </button>
+            </div>
+        </div>
+        <div class="category4" data-category="tshirt" data-price="500">
+            <div class="catego">
+                <img src="shirts/1.avif" alt="Product Image">
+            </div>
+            <div class="price">
+                <h2>shirt</h2>
+                <h3>500,000t</h3>
+                <button class="add-to-cart" data-name="shirt" data-price="500" data-img="shirts/1.avif">
+                    <img src="svg/plus-large-svgrepo-com.svg" width="100%" class="svg1">
+                </button>
+            </div>
+        </div>
+        <div class="category4" data-category="tshirt" data-price="500">
+            <div class="catego">
+                <img src="shirts/8.avif" alt="Product Image">
+            </div>
+            <div class="price">
+                <h2>shirt2</h2>
+                <h3>500,000t</h3>
+                <button class="add-to-cart" data-name="shirt2" data-price="500" data-img="shirts/8.avif">
+                    <img src="svg/plus-large-svgrepo-com.svg" width="100%" class="svg1">
+                </button>
+            </div>
+        </div>
+        <div class="category4" data-category="pants" data-price="650">
+            <div class="catego">
+                <img src="pants/9.jpg" alt="Product Image">
+            </div>
+            <div class="price">
+                <h2>pants</h2>
+                <h3>650,000t</h3>
+                <button class="add-to-cart" data-name="pants" data-price="650" data-img="pants/9.jpg">
+                    <img src="svg/plus-large-svgrepo-com.svg" width="100%" class="svg1">
+                </button>
+            </div>
+        </div>
+        <div class="category4" data-category="tshirt" data-price="550">
+            <div class="catego">
+                <img src="shirts/7.avif" alt="Product Image">
+            </div>
+            <div class="price">
+                <h2>shirt</h2>
+                <h3>550,000t</h3>
+                <button class="add-to-cart" data-name="shirt" data-price="550" data-img="shirts/7.avif">
+                    <img src="svg/plus-large-svgrepo-com.svg" width="100%" class="svg1">
+                </button>
+            </div>
+        </div>
+        <!-- Additional categories can go here -->
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
